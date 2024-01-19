@@ -25,7 +25,12 @@ class Post {
           title: title,
           body: body,
         ),
-      _ => throw const FormatException('Failed to load post.'),
+      _ => const Post(
+          userId: 0,
+          id: 0,
+          title: '',
+          body: '',
+        ),
     };
   }
 }

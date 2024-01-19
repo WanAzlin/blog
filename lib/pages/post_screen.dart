@@ -32,7 +32,7 @@ class PostBody extends StatefulWidget {
 }
 
 class _PostBodyState extends State<PostBody> {
-  late Future<Post> futurePost;
+  Future<Post>? futurePost;
 
   @override
   void initState() {

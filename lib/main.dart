@@ -42,7 +42,7 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
-  late Future<List<Post>> futurePost;
+  Future<List<Post>>? futurePost;
 
   @override
   void initState() {
@@ -80,14 +80,14 @@ class _HomeBodyState extends State<HomeBody> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                BlogPost(post: snapshot.data![index])));
+                                PostScreen(post: snapshot.data![index])));
                   },
                   title: Text(snapshot.data![index].title),
                   subtitle: Text(
                     snapshot.data![index].body,
                     maxLines: 2,
                   ),
-                  leading: Text(snapshot.data![index].userId
+                  leading: Text(snapshot.data![index].id
                       .toString()), //convert int to string
                 );
               },
